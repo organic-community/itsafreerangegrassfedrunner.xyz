@@ -16,7 +16,7 @@ export function WalletConnectionProvider({
 }: {
   children: ReactNode;
 }) {
-  const endpoint = useMemo(() => clusterApiUrl("mainnet-beta"), []);
+  const endpoint = useMemo(() => "https://mainnet.helius-rpc.com/?api-key=41023146-3e5e-4214-ba0d-8697fb7f0045", []);
 
   const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
 

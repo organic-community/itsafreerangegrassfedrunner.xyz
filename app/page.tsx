@@ -50,6 +50,16 @@ export default function OrganicTokenLanding() {
                 <div className="w-px h-6 bg-gray-300 hidden sm:block" />
 
                 <a
+                  href="/staking"
+                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 active:from-purple-200 active:to-pink-200 rounded-full text-xs sm:text-sm font-bold text-purple-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
+                >
+                  <span className="text-base sm:text-sm">🌱</span>
+                  <span className="hidden sm:inline">Staking</span>
+                </a>
+
+                <div className="w-px h-6 bg-gray-300 hidden sm:block" />
+
+                <a
                   href="https://organicrunner-shop.fourthwall.com/"
                   target="_blank"
                   rel="noopener noreferrer"
