@@ -35,7 +35,7 @@ export default function OrganicTokenLanding() {
                 <span className="text-base sm:text-lg font-black bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent">
                   ORGANIC
                 </span>
-              </div>
+      </div>
 
               {/* Mobile Navigation Links */}
               <div className="flex items-center gap-2 sm:gap-4">
@@ -45,6 +45,18 @@ export default function OrganicTokenLanding() {
                 >
                   <span className="text-base sm:text-sm">🎮</span>
                   <span className="hidden sm:inline">Ecosystem</span>
+                </a>
+
+                <div className="w-px h-6 bg-gray-300 hidden sm:block" />
+
+                <a
+                  href="https://organicrunner-shop.fourthwall.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-emerald-100 to-lime-100 active:from-emerald-200 active:to-lime-200 rounded-full text-xs sm:text-sm font-bold text-emerald-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
+                >
+                  <span className="text-base sm:text-sm">🛍️</span>
+                  <span className="hidden sm:inline">Merch Store</span>
                 </a>
 
                 <div className="w-px h-6 bg-gray-300 hidden sm:block" />
@@ -60,21 +72,21 @@ export default function OrganicTokenLanding() {
                   <span className="sm:hidden text-xs">Buy</span>
                 </a>
 
-                <a
-                  href="https://x.com/organicrunner_"
-                  target="_blank"
-                  rel="noopener noreferrer"
+        <a
+          href="https://x.com/organicrunner_"
+          target="_blank"
+          rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center w-11 h-11 sm:w-10 sm:h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
-                >
-                  <svg
+        >
+          <svg
                     className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-              </div>
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
             </div>
           </div>
         </div>
@@ -168,8 +180,8 @@ export default function OrganicTokenLanding() {
               <span className="text-sm font-semibold text-green-700">
                 100% Organic • Free Range • Grass Fed
               </span>
-            </div>
           </div>
+        </div>
 
           {/* Main Title */}
           <div className="text-center mb-12">
@@ -255,23 +267,44 @@ export default function OrganicTokenLanding() {
                     </div>
                   </div>
                 </div>
+          </div>
+        </Card>
+          </div>
+
+          {/* Merch Promo */}
+          <div className="max-w-6xl mx-auto mb-12 px-4">
+            <a
+              href="https://organicrunner-shop.fourthwall.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-gradient-to-r from-emerald-600 via-lime-500 to-green-600 rounded-3xl p-6 sm:p-10 shadow-xl hover:shadow-2xl transition-all hover:scale-[1.01] border border-white/30"
+            >
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-white">
+                <div className="text-center sm:text-left">
+                  <div className="text-2xl sm:text-3xl font-extrabold mb-1">Merch Store</div>
+                  <div className="text-white/90">All cows go to heaven • Cool Cow Merch</div>
+                </div>
+                <div className="inline-flex items-center gap-3 bg-white text-emerald-700 px-6 py-3 rounded-full font-bold border-2 border-white">
+                  <span>Shop Now</span>
+                  <span>→</span>
+                </div>
               </div>
-            </Card>
+            </a>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex justify-center">
-            <a
-              href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
-              target="_blank"
-              rel="noopener noreferrer"
+          <a
+            href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
+            target="_blank"
+            rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-lime-500 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
-            >
+          >
               <span className="relative z-10">Join the Movement</span>
               <span className="relative z-10">→</span>
               <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
-          </div>
+          </a>
+        </div>
 
           {/* Jupiter Widget */}
           <div className="mt-16">
@@ -279,7 +312,7 @@ export default function OrganicTokenLanding() {
           </div>
 
           {/* Contract Address */}
-          <div className="mt-16 text-center">
+        <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200 shadow-sm">
               <span className="text-xs text-gray-500">CA:</span>
               <code className="text-xs font-mono text-gray-700">
