@@ -376,6 +376,29 @@ export default function EcosystemPage() {
             </div>
           </a>
 
+          <a 
+            href="https://cow-poop-game.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block"
+          >
+            <div className="bg-gradient-to-br from-amber-100 to-orange-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-amber-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-amber-200 group-hover:to-orange-200 h-full min-h-[180px] sm:min-h-[200px]">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">💩</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow Poop Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={110} max={999} /> plays</span>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Click the cow, make premium organic fertilizer. Sustainably silly.</p>
+              <div className="flex items-center gap-2 text-amber-700 font-semibold text-xs sm:text-sm">
+                <span>Play Now</span>
+                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
         </div>
         
         {/* Footer */}
