@@ -62,6 +62,16 @@ export default function OrganicTokenLanding() {
                 <div className="w-px h-6 bg-gray-300 hidden sm:block" />
 
                 <a
+                  href="https://dexscreener.com/solana/9r87b2ur7jemtmshxjq9cwr4j4fnf2qfhzivhbay3zcb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-sky-100 to-cyan-100 active:from-sky-200 active:to-cyan-200 rounded-full text-xs sm:text-sm font-bold text-cyan-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
+                >
+                  <span className="text-base sm:text-sm">📈</span>
+                  <span className="hidden sm:inline">DexScreener</span>
+                </a>
+
+                <a
                   href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -32,6 +32,15 @@ html {
 }
         `}</style>
 
+        <Script id="wallet-standard-shim" strategy="beforeInteractive">{`
+          try {
+            if (typeof window !== 'undefined' && (!window.navigator || !Array.isArray((window as any).navigator.wallets))) {
+              (window as any).navigator = (window as any).navigator || {};
+              (window as any).navigator.wallets = [];
+            }
+          } catch {}
+        `}</Script>
+
         <Script
           src="https://plugin.jup.ag/plugin-v1.js"
           strategy="beforeInteractive"
