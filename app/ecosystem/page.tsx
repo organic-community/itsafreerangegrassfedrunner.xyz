@@ -308,6 +308,29 @@ export default function EcosystemPage() {
           </a>
 
           <a 
+            href="https://v0-cow-pacman.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block"
+          >
+            <div className="bg-gradient-to-br from-yellow-100 to-lime-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-yellow-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-yellow-200 group-hover:to-lime-200 h-full min-h-[180px] sm:min-h-[200px]">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🟡</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow Pac-Man</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={130} max={999} /> plays</span>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Chomp the pellets, dodge the ghosts, moo the maze.</p>
+              <div className="flex items-center gap-2 text-yellow-700 font-semibold text-xs sm:text-sm">
+                <span>Play Now</span>
+                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <a 
             href="https://oragnic-chat-bot.vercel.app" 
             target="_blank" 
             rel="noopener noreferrer" 
@@ -323,6 +346,29 @@ export default function EcosystemPage() {
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Chat with the punniest AI cow on the web.</p>
               <div className="flex items-center gap-2 text-rose-700 font-semibold text-xs sm:text-sm">
                 <span>Start Chatting</span>
+                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <a 
+            href="https://gizmo.party/p/teSOSZ_0SpGaVtp_fXxUAw" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block"
+          >
+            <div className="bg-gradient-to-br from-cyan-100 to-lime-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-cyan-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-cyan-200 group-hover:to-lime-200 h-full min-h-[180px] sm:min-h-[200px]">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🎯</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Gizmo Playground</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={140} max={999} /> plays</span>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Jump into another gizmo-powered cow adventure.</p>
+              <div className="flex items-center gap-2 text-cyan-700 font-semibold text-xs sm:text-sm">
+                <span>Open Link</span>
                 <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
