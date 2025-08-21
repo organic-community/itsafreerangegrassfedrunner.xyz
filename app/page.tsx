@@ -1,5 +1,6 @@
-import { Card } from "@/components/ui/card"
-import { PlaysCounter } from "@/components/plays-counter"
+import { Card } from "@/components/ui/card";
+import { PlaysCounter } from "@/components/plays-counter";
+import PluginComponent from "@/components/jupiter-widget";
 
 export default function OrganicTokenLanding() {
   // client-side counters are handled by PlaysCounter to keep values under 1000
@@ -14,9 +15,12 @@ export default function OrganicTokenLanding() {
       </div>
 
       {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2384cc16' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2384cc16' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
 
       {/* Mobile-Optimized Navigation header */}
       <nav className="relative z-30 px-4 sm:px-6 py-3 sm:py-4">
@@ -42,9 +46,9 @@ export default function OrganicTokenLanding() {
                   <span className="text-base sm:text-sm">🎮</span>
                   <span className="hidden sm:inline">Ecosystem</span>
                 </a>
-                
+
                 <div className="w-px h-6 bg-gray-300 hidden sm:block" />
-                
+
                 <a
                   href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
                   target="_blank"
@@ -56,21 +60,21 @@ export default function OrganicTokenLanding() {
                   <span className="sm:hidden text-xs">Buy</span>
                 </a>
 
-        <a
-          href="https://x.com/organicrunner_"
-          target="_blank"
-          rel="noopener noreferrer"
+                <a
+                  href="https://x.com/organicrunner_"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center w-11 h-11 sm:w-10 sm:h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
-        >
-          <svg
+                >
+                  <svg
                     className="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-      </div>
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -83,7 +87,9 @@ export default function OrganicTokenLanding() {
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-2xl animate-bounce">🎮</span>
-                <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">Play Now</span>
+                <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">
+                  Play Now
+                </span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-2">
                 <a
@@ -93,7 +99,9 @@ export default function OrganicTokenLanding() {
                   className="group relative px-3 sm:px-4 py-2 bg-gradient-to-r from-lime-400 to-green-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden text-sm sm:text-base flex items-center gap-2"
                 >
                   <span className="relative z-10">🐮 3D Cow</span>
-                  <span className="relative z-10 text-[11px] bg-white/70 text-green-700 border border-white/60 rounded-full px-2 py-0.5"><PlaysCounter min={200} max={999} /></span>
+                  <span className="relative z-10 text-[11px] bg-white/70 text-green-700 border border-white/60 rounded-full px-2 py-0.5">
+                    <PlaysCounter min={200} max={999} />
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-lime-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 <a
@@ -103,7 +111,9 @@ export default function OrganicTokenLanding() {
                   className="group relative px-3 sm:px-4 py-2 bg-gradient-to-r from-orange-400 to-amber-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden text-sm sm:text-base flex items-center gap-2"
                 >
                   <span className="relative z-10">🥛 Tap Cow</span>
-                  <span className="relative z-10 text-[11px] bg-white/70 text-orange-700 border border-white/60 rounded-full px-2 py-0.5"><PlaysCounter min={150} max={999} /></span>
+                  <span className="relative z-10 text-[11px] bg-white/70 text-orange-700 border border-white/60 rounded-full px-2 py-0.5">
+                    <PlaysCounter min={150} max={999} />
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 <a
@@ -113,7 +123,9 @@ export default function OrganicTokenLanding() {
                   className="group relative px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-400 to-pink-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden text-sm sm:text-base flex items-center gap-2"
                 >
                   <span className="relative z-10">🌿 Eat Grass</span>
-                  <span className="relative z-10 text-[11px] bg-white/70 text-fuchsia-700 border border-white/60 rounded-full px-2 py-0.5"><PlaysCounter min={100} max={999} /></span>
+                  <span className="relative z-10 text-[11px] bg-white/70 text-fuchsia-700 border border-white/60 rounded-full px-2 py-0.5">
+                    <PlaysCounter min={100} max={999} />
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 <a
@@ -123,7 +135,9 @@ export default function OrganicTokenLanding() {
                   className="group relative px-3 sm:px-4 py-2 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden text-sm sm:text-base flex items-center gap-2"
                 >
                   <span className="relative z-10">🎉 Gizmo</span>
-                  <span className="relative z-10 text-[11px] bg-white/70 text-rose-700 border border-white/60 rounded-full px-2 py-0.5"><PlaysCounter min={250} max={999} /></span>
+                  <span className="relative z-10 text-[11px] bg-white/70 text-rose-700 border border-white/60 rounded-full px-2 py-0.5">
+                    <PlaysCounter min={250} max={999} />
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 <a
@@ -133,7 +147,9 @@ export default function OrganicTokenLanding() {
                   className="group relative px-3 sm:px-4 py-2 bg-gradient-to-r from-teal-400 to-emerald-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden text-sm sm:text-base flex items-center gap-2"
                 >
                   <span className="relative z-10">🔢 Cow 2048</span>
-                  <span className="relative z-10 text-[11px] bg-white/70 text-emerald-700 border border-white/60 rounded-full px-2 py-0.5"><PlaysCounter min={160} max={999} /></span>
+                  <span className="relative z-10 text-[11px] bg-white/70 text-emerald-700 border border-white/60 rounded-full px-2 py-0.5">
+                    <PlaysCounter min={160} max={999} />
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
@@ -149,14 +165,18 @@ export default function OrganicTokenLanding() {
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-lime-100 to-green-100 rounded-full border border-green-300 shadow-sm">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm font-semibold text-green-700">100% Organic • Free Range • Grass Fed</span>
+              <span className="text-sm font-semibold text-green-700">
+                100% Organic • Free Range • Grass Fed
+              </span>
+            </div>
           </div>
-        </div>
 
           {/* Main Title */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">🐄</div>
+              <div className="w-12 h-12 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
+                🐄
+              </div>
               <h1 className="text-5xl sm:text-7xl md:text-9xl font-black bg-gradient-to-br from-green-600 via-lime-500 to-emerald-500 bg-clip-text text-transparent animate-gradient">
                 ORGANIC
               </h1>
@@ -164,7 +184,9 @@ export default function OrganicTokenLanding() {
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 font-light tracking-wide">
               A free range grass fed runner
             </p>
-            <p className="mt-2 text-lg sm:text-xl font-bold text-green-700">All cows go to heaven</p>
+            <p className="mt-2 text-lg sm:text-xl font-bold text-green-700">
+              All cows go to heaven
+            </p>
           </div>
 
           {/* Description Card */}
@@ -173,60 +195,100 @@ export default function OrganicTokenLanding() {
               <div className="p-10">
                 <div className="flex justify-center mb-6">
                   <div className="flex gap-2">
-                    <span className="text-4xl animate-bounce" style={{ animationDelay: '0ms' }}>🐄</span>
-                    <span className="text-4xl animate-bounce" style={{ animationDelay: '200ms' }}>🥛</span>
-                    <span className="text-4xl animate-bounce" style={{ animationDelay: '400ms' }}>🌿</span>
+                    <span
+                      className="text-4xl animate-bounce"
+                      style={{ animationDelay: "0ms" }}
+                    >
+                      🐄
+                    </span>
+                    <span
+                      className="text-4xl animate-bounce"
+                      style={{ animationDelay: "200ms" }}
+                    >
+                      🥛
+                    </span>
+                    <span
+                      className="text-4xl animate-bounce"
+                      style={{ animationDelay: "400ms" }}
+                    >
+                      🌿
+                    </span>
                   </div>
                 </div>
                 <p className="text-lg md:text-xl leading-relaxed text-gray-700 text-center">
-                  Our cows aren't just cows - they're angels. Raised under heavenly blue skies, grazing on the greenest
-                  pastures, and frolicking like nobody's watching, each one pours their heart (and milk) into every carton.
+                  Our cows aren't just cows - they're angels. Raised under
+                  heavenly blue skies, grazing on the greenest pastures, and
+                  frolicking like nobody's watching, each one pours their heart
+                  (and milk) into every carton.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-green-600">100%</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Grass Fed</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-600">
+                      100%
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-600">
+                      Grass Fed
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-lime-600">Free</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Range</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-lime-600">
+                      Free
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-600">
+                      Range
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-emerald-600">Zero</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Additives</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-emerald-600">
+                      Zero
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-600">
+                      Additives
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-green-500">Pure</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Happiness</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-500">
+                      Pure
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-600">
+                      Happiness
+                    </div>
                   </div>
                 </div>
-          </div>
-        </Card>
+              </div>
+            </Card>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex justify-center">
-          <a
-            href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-lime-500 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
-          >
+            >
               <span className="relative z-10">Join the Movement</span>
               <span className="relative z-10">→</span>
               <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
-        </div>
+            </a>
+          </div>
+
+          {/* Jupiter Widget */}
+          <div className="mt-16">
+            <PluginComponent />
+          </div>
 
           {/* Contract Address */}
-        <div className="mt-16 text-center">
+          <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200 shadow-sm">
               <span className="text-xs text-gray-500">CA:</span>
-              <code className="text-xs font-mono text-gray-700">DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777</code>
+              <code className="text-xs font-mono text-gray-700">
+                DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777
+              </code>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
