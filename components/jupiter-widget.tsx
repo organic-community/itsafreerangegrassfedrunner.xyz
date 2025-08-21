@@ -13,6 +13,8 @@ export default function PluginComponent() {
             initialInputMint: "So11111111111111111111111111111111111111112",
             initialOutputMint: "DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777",
             fixedMint: "DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777",
+            referralAccount: "Fgva1zmTczygMJM2sWG42BrHsSq2kvzDViDYQkT5NQmg",
+            referralFee: 100,
           },
         });
       } else {
