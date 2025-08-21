@@ -1,3 +1,5 @@
+import { PlaysCounter } from "@/components/plays-counter"
+
 export default function EcosystemPage() {
   return (
     <div className="h-screen overflow-hidden bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50">
@@ -48,7 +50,7 @@ export default function EcosystemPage() {
                   className="group relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 active:from-green-600 active:to-lime-500 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 active:scale-95 shadow-lg min-h-[44px]"
                 >
                   <span className="text-base sm:text-sm">💰</span>
-                  <span className="hidden sm:inline">Buy $ORGANIC</span>
+                  <span className="hidden sm:inline">Buy ORGANIC</span>
                   <span className="sm:hidden text-xs">Buy</span>
                 </a>
 
@@ -76,8 +78,8 @@ export default function EcosystemPage() {
         {/* Mobile-Optimized Header */}
         <div className="text-center mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-2 sm:gap-4 mb-3 sm:mb-4">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-lg">
-              $O
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white text-sm sm:text-lg shadow-lg">
+              🐄
             </div>
             <span className="text-xl sm:text-2xl animate-bounce" style={{ animationDelay: '0ms' }}>🥛</span>
             <h1 className="text-2xl sm:text-3xl md:text-5xl font-black bg-gradient-to-br from-green-600 via-lime-500 to-emerald-500 bg-clip-text text-transparent">
@@ -129,6 +131,10 @@ export default function EcosystemPage() {
             <div className="bg-gradient-to-br from-yellow-100 to-amber-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-yellow-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-yellow-200 group-hover:to-amber-200 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🐍</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow Snake Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={120} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Classic snake but with cow vibes. Moo your way to victory!</p>
               <div className="flex items-center gap-2 text-amber-600 font-semibold text-xs sm:text-sm">
                 <span>Play Now</span>
@@ -148,6 +154,10 @@ export default function EcosystemPage() {
             <div className="bg-white/60 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/50 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:bg-white/80 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🐮</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">3D Cow Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={200} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Move the cow. Be the cow. Hear the cow.</p>
               <div className="flex items-center gap-2 text-green-600 font-semibold text-xs sm:text-sm">
                 <span>Play Now</span>
@@ -167,6 +177,10 @@ export default function EcosystemPage() {
             <div className="bg-white/60 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/50 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:bg-white/80 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🥛</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow Tapping Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={150} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Tap to run free. Mooo intensifies.</p>
               <div className="flex items-center gap-2 text-orange-600 font-semibold text-xs sm:text-sm">
                 <span>Play Now</span>
@@ -186,6 +200,10 @@ export default function EcosystemPage() {
             <div className="bg-white/60 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/50 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:bg-white/80 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🌿</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow Eating Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={100} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Consume grass. Consume ego.</p>
               <div className="flex items-center gap-2 text-purple-600 font-semibold text-xs sm:text-sm">
                 <span>Play Now</span>
@@ -196,24 +214,6 @@ export default function EcosystemPage() {
             </div>
           </a>
           
-          <a 
-            href="https://v0-cow-game-development.vercel.app/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="group block"
-          >
-            <div className="bg-white/60 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/50 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:bg-white/80 h-full min-h-[180px] sm:min-h-[200px]">
-              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🌀</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">3D Cow Game (alt)</h3>
-              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Same cow, different vibe. Respect the slash.</p>
-              <div className="flex items-center gap-2 text-lime-600 font-semibold text-xs sm:text-sm">
-                <span>Play Now</span>
-                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </div>
-            </div>
-          </a>
           
           <a 
             href="https://gizmo.party/p/8m-jY5ovTeqj2yJ2UwHDLw?_a=Rcbqaob0TmGweGfXp3Pn5w" 
@@ -224,6 +224,10 @@ export default function EcosystemPage() {
             <div className="bg-gradient-to-br from-pink-100 to-purple-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-pink-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-pink-200 group-hover:to-purple-200 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🎉</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Gizmo Cow Party</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={300} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Join Organic Runner on Gizmo. It's unreasonably festive.</p>
               <div className="flex items-center gap-2 text-pink-600 font-semibold text-xs sm:text-sm">
                 <span>Join Party</span>
@@ -243,6 +247,10 @@ export default function EcosystemPage() {
             <div className="bg-gradient-to-br from-blue-100 to-cyan-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-blue-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-blue-200 group-hover:to-cyan-200 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🌊</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Gizmo Wave Rider</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={250} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Surf the digital waves with organic vibes. Ride the moo!</p>
               <div className="flex items-center gap-2 text-blue-600 font-semibold text-xs sm:text-sm">
                 <span>Ride Waves</span>
@@ -262,6 +270,10 @@ export default function EcosystemPage() {
             <div className="bg-gradient-to-br from-indigo-100 to-violet-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-indigo-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-indigo-200 group-hover:to-violet-200 h-full min-h-[180px] sm:min-h-[200px]">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🥛</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow Milking Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={180} max={999} /> plays</span>
+              </div>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Master the art of milking! Fresh organic goodness awaits.</p>
               <div className="flex items-center gap-2 text-indigo-600 font-semibold text-xs sm:text-sm">
                 <span>Start Milking</span>
@@ -271,6 +283,53 @@ export default function EcosystemPage() {
               </div>
             </div>
           </a>
+
+          <a 
+            href="https://v0-2048-cow.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block"
+          >
+            <div className="bg-gradient-to-br from-teal-100 to-emerald-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-teal-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-teal-200 group-hover:to-emerald-200 h-full min-h-[180px] sm:min-h-[200px]">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🔢</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Cow 2048</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={160} max={999} /> plays</span>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Slide tiles, merge moos, reach 2048.</p>
+              <div className="flex items-center gap-2 text-teal-700 font-semibold text-xs sm:text-sm">
+                <span>Play Now</span>
+                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <a 
+            href="https://oragnic-chat-bot.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block"
+          >
+            <div className="bg-gradient-to-br from-rose-100 to-lime-100 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-rose-200 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-rose-200 group-hover:to-lime-200 h-full min-h-[180px] sm:min-h-[200px]">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">💬</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Moo Chat Game</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={140} max={999} /> plays</span>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Chat with the punniest AI cow on the web.</p>
+              <div className="flex items-center gap-2 text-rose-700 font-semibold text-xs sm:text-sm">
+                <span>Start Chatting</span>
+                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
         </div>
         
         {/* Footer */}
