@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
+import Link from "next/link"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -29,7 +30,16 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <header className="fixed top-0 left-0 right-0 z-50 flex justify-start p-3 pointer-events-none">
+          <nav className="pointer-events-auto">
+            <Link href="/ecosystem" className="px-4 py-2 rounded-full bg-accent text-accent-foreground border-4 border-primary font-extrabold shadow-2xl hover:rotate-1 hover:scale-105 transition-all">
+              Ecosystem
+            </Link>
+          </nav>
+        </header>
+        {children}
+      </body>
     </html>
   )
 }
