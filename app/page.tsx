@@ -16,59 +16,57 @@ export default function OrganicTokenLanding() {
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2384cc16' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }} />
 
-      {/* Fun Navigation header */}
-      <nav className="relative z-30 px-6 py-4">
+      {/* Mobile-Optimized Navigation header */}
+      <nav className="relative z-30 px-4 sm:px-6 py-3 sm:py-4">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 px-6 py-3">
+          <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 px-4 sm:px-6 py-3">
             <div className="flex items-center justify-between">
               {/* Logo & Brand */}
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg hover:scale-110 transition-transform cursor-pointer">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg active:scale-95 transition-transform cursor-pointer">
                   🐄
                 </div>
-                <span className="text-lg font-black bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent">
+                <span className="text-base sm:text-lg font-black bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent">
                   ORGANIC
                 </span>
               </div>
 
-              {/* Navigation Links */}
-              <div className="flex items-center gap-4">
+              {/* Mobile Navigation Links */}
+              <div className="flex items-center gap-2 sm:gap-4">
                 <a
                   href="/ecosystem"
-                  className="group relative inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-lime-100 to-green-100 hover:from-lime-200 hover:to-green-200 rounded-full text-sm font-bold text-green-700 transition-all duration-300 hover:scale-105 hover:rotate-1 shadow-sm hover:shadow-md"
+                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-lime-100 to-green-100 active:from-lime-200 active:to-green-200 rounded-full text-xs sm:text-sm font-bold text-green-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
                 >
-                  <span className="group-hover:animate-bounce">🎮</span>
-                  <span>Ecosystem</span>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/20 to-lime-400/20 scale-0 group-hover:scale-100 transition-transform duration-300" />
+                  <span className="text-base sm:text-sm">🎮</span>
+                  <span className="hidden sm:inline">Ecosystem</span>
                 </a>
                 
-                <div className="w-px h-6 bg-gray-300" />
+                <div className="w-px h-6 bg-gray-300 hidden sm:block" />
                 
                 <a
                   href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 hover:from-green-600 hover:to-lime-500 rounded-full text-sm font-bold text-white transition-all duration-300 hover:scale-105 hover:-rotate-1 shadow-lg hover:shadow-xl"
+                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 active:from-green-600 active:to-lime-500 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 active:scale-95 shadow-lg min-h-[44px]"
                 >
-                  <span className="group-hover:animate-pulse">💰</span>
-                  <span>Buy $ORGANIC</span>
-                  <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300" />
+                  <span className="text-base sm:text-sm">💰</span>
+                  <span className="hidden sm:inline">Buy $ORGANIC</span>
+                  <span className="sm:hidden text-xs">Buy</span>
                 </a>
 
                 <a
                   href="https://x.com/organicrunner_"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center w-10 h-10 bg-black hover:bg-gray-800 text-white rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-xl"
+                  className="group relative inline-flex items-center justify-center w-11 h-11 sm:w-10 sm:h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
                 >
                   <svg
-                    className="w-5 h-5 group-hover:scale-110 transition-transform"
+                    className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 scale-0 group-hover:scale-100 transition-transform duration-300" />
                 </a>
               </div>
             </div>
