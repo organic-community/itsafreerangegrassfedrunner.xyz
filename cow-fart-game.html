@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gas The Grass - WORKING</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #87CEEB; font-family: Arial; }
+        canvas { border: 2px solid #000; background: #90EE90; }
+        #info { margin-bottom: 10px; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="info">🐄 Use WASD to move • Eat grass (green circles) • Avoid hay (yellow squares) • Don't let the timer hit 0!</div>
+    <canvas id="game" width="800" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('game');
+        const ctx = canvas.getContext('2d');
+        
+        // Audio context for sound effects
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Sound functions
+        function playChewSound() {
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.frequency.setValueAtTime(200, audioCtx.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.1);
+            oscillator.type = 'square';
+            
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+            
+            oscillator.start(audioCtx.currentTime);
+            oscillator.stop(audioCtx.currentTime + 0.2);
+        }
+        
+        function playSwishSound() {
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.frequency.setValueAtTime(800, audioCtx.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.15);
+            oscillator.type = 'sawtooth';
+            
+            gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
+            
+            oscillator.start(audioCtx.currentTime);
+            oscillator.stop(audioCtx.currentTime + 0.15);
+        }
+        
+        function playFartSound() {
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.frequency.setValueAtTime(80, audioCtx.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.5);
+            oscillator.type = 'sawtooth';
+            
+            gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.8);
+            
+            oscillator.start(audioCtx.currentTime);
+            oscillator.stop(audioCtx.currentTime + 0.8);
+        }
+        
+        // Game state
+        let cow = { x: 400, y: 300, size: 30 };
+        let fartTimer = 300; // 5 seconds at 60fps
+        let score = 0;
+        let gameState = 'playing';
+        
+        // Grass positions
+        let grass = [
+            { x: 100, y: 100, eaten: false },
+            { x: 700, y: 100, eaten: false },
+            { x: 100, y: 500, eaten: false },
+            { x: 700, y: 500, eaten: false },
+            { x: 400, y: 150, eaten: false },
+            { x: 200, y: 300, eaten: false },
+            { x: 600, y: 400, eaten: false }
+        ];
+        
+        // Hay bales
+        let hayBales = [
+            { x: 300, y: 200, size: 40 },
+            { x: 500, y: 200, size: 40 },
+            { x: 300, y: 400, size: 40 },
+            { x: 500, y: 400, size: 40 }
+        ];
+        
+        // Input handling
+        let keys = {};
+        document.addEventListener('keydown', (e) => keys[e.key.toLowerCase()] = true);
+        document.addEventListener('keyup', (e) => keys[e.key.toLowerCase()] = false);
+        
+        function update() {
+            if (gameState !== 'playing') return;
+            
+            // Move cow
+            let speed = 4;
+            if (keys['w'] || keys['arrowup']) cow.y -= speed;
+            if (keys['s'] || keys['arrowdown']) cow.y += speed;
+            if (keys['a'] || keys['arrowleft']) cow.x -= speed;
+            if (keys['d'] || keys['arrowright']) cow.x += speed;
+            
+            // Keep cow in bounds
+            cow.x = Math.max(cow.size/2, Math.min(canvas.width - cow.size/2, cow.x));
+            cow.y = Math.max(cow.size/2, Math.min(canvas.height - cow.size/2, cow.y));
+            
+            // Check grass eating
+            grass.forEach(g => {
+                if (!g.eaten && Math.abs(cow.x - g.x) < 25 && Math.abs(cow.y - g.y) < 25) {
+                    g.eaten = true;
+                    score++;
+                    fartTimer += 60; // Add 1 second
+                    playChewSound();
+                }
+            });
+            
+            // Check hay collision
+            hayBales.forEach(h => {
+                if (Math.abs(cow.x - h.x) < (cow.size + h.size)/2 && 
+                    Math.abs(cow.y - h.y) < (cow.size + h.size)/2) {
+                    fartTimer -= 10; // Lose time faster
+                    playSwishSound();
+                }
+            });
+            
+            // Update timer
+            fartTimer--;
+            if (fartTimer <= 0) {
+                gameState = 'gameover';
+                playFartSound();
+            }
+            
+            // Check win
+            if (grass.every(g => g.eaten)) {
+                gameState = 'win';
+            }
+        }
+        
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#90EE90';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw grass
+            grass.forEach(g => {
+                if (!g.eaten) {
+                    ctx.fillStyle = '#00AA00';
+                    ctx.beginPath();
+                    ctx.arc(g.x, g.y, 15, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+            
+            // Draw hay bales
+            ctx.fillStyle = '#FFD700';
+            hayBales.forEach(h => {
+                ctx.fillRect(h.x - h.size/2, h.y - h.size/2, h.size, h.size);
+            });
+            
+            // Draw cow body
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            
+            // Main body (oval)
+            ctx.beginPath();
+            ctx.ellipse(cow.x, cow.y, cow.size/2, cow.size/3, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            
+            // Head (circle)
+            ctx.beginPath();
+            ctx.arc(cow.x, cow.y - cow.size/3, cow.size/4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            
+            // Legs
+            ctx.fillStyle = 'white';
+            ctx.fillRect(cow.x - 12, cow.y + 8, 4, 8);
+            ctx.fillRect(cow.x - 4, cow.y + 8, 4, 8);
+            ctx.fillRect(cow.x + 4, cow.y + 8, 4, 8);
+            ctx.fillRect(cow.x + 12, cow.y + 8, 4, 8);
+            
+            // Black spots
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(cow.x - 8, cow.y - 3, 4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(cow.x + 6, cow.y + 2, 3, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Eyes
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(cow.x - 4, cow.y - cow.size/3 - 2, 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(cow.x + 4, cow.y - cow.size/3 - 2, 2, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Nose
+            ctx.fillStyle = 'pink';
+            ctx.fillRect(cow.x - 3, cow.y - cow.size/3 + 3, 6, 3);
+            
+            // Ears
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'black';
+            ctx.beginPath();
+            ctx.ellipse(cow.x - 8, cow.y - cow.size/3 - 6, 3, 6, -0.3, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.ellipse(cow.x + 8, cow.y - cow.size/3 - 6, 3, 6, 0.3, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            
+            // Tail
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(cow.x, cow.y + cow.size/3);
+            ctx.lineTo(cow.x - 5, cow.y + cow.size/2 + 5);
+            ctx.stroke();
+            
+            // Draw timer bar
+            let timerPercent = Math.max(0, fartTimer / 300);
+            ctx.fillStyle = timerPercent > 0.3 ? '#00FF00' : '#FF0000';
+            ctx.fillRect(10, 10, 200 * timerPercent, 20);
+            ctx.strokeStyle = 'black';
+            ctx.strokeRect(10, 10, 200, 20);
+            
+            // Draw text
+            ctx.fillStyle = 'black';
+            ctx.font = '16px Arial';
+            ctx.fillText(`Timer: ${Math.ceil(fartTimer/60)}s`, 10, 50);
+            ctx.fillText(`Grass: ${score}/${grass.length}`, 10, 70);
+            
+            // Game over/win screen
+            if (gameState === 'gameover') {
+                ctx.fillStyle = 'rgba(255,0,0,0.8)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'white';
+                ctx.font = '48px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('💨 COW FARTED! 💨', canvas.width/2, canvas.height/2);
+                ctx.font = '24px Arial';
+                ctx.fillText('Press R to restart', canvas.width/2, canvas.height/2 + 50);
+            } else if (gameState === 'win') {
+                ctx.fillStyle = 'rgba(0,255,0,0.8)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'white';
+                ctx.font = '48px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('🎉 YOU WIN! 🎉', canvas.width/2, canvas.height/2);
+                ctx.font = '24px Arial';
+                ctx.fillText('Press R to restart', canvas.width/2, canvas.height/2 + 50);
+            }
+            ctx.textAlign = 'left';
+        }
+        
+        // Restart function
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'r' && gameState !== 'playing') {
+                cow.x = 400;
+                cow.y = 300;
+                fartTimer = 300;
+                score = 0;
+                gameState = 'playing';
+                grass.forEach(g => g.eaten = false);
+            }
+        });
+        
+        // Game loop
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+        
+        gameLoop();
+    </script>
+</body>
+</html>
