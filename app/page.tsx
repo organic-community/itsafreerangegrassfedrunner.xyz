@@ -2,6 +2,9 @@ import { Card } from "@/components/ui/card";
 import { PlaysCounter } from "@/components/plays-counter";
 import PluginComponent from "@/components/jupiter-widget";
 import { MobileMenu } from "@/components/mobile-menu";
+import { LINKS } from "@/config/links";
+import { CopyCAButton } from "@/components/copy-ca";
+import { GameBanner } from "@/components/game-banner";
 
 export default function OrganicTokenLanding() {
   // client-side counters are handled by PlaysCounter to keep values under 1000
@@ -35,11 +38,11 @@ export default function OrganicTokenLanding() {
               </div>
               {/* Desktop links */}
               <div className="hidden sm:flex items-center gap-3">
-                <a href="/ecosystem" className="px-3 py-2 rounded-full bg-gradient-to-r from-lime-100 to-green-100 text-xs font-bold text-green-700">🎮 Ecosystem</a>
-                <a href="https://organicrunner-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-lime-100 text-xs font-bold text-emerald-700">🛍️ Merch</a>
-                <a href="https://dexscreener.com/solana/9r87b2ur7jemtmshxjq9cwr4j4fnf2qfhzivhbay3zcb" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-sky-100 to-cyan-100 text-xs font-bold text-cyan-700">📈 DexScreener</a>
-                <a href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-green-500 to-lime-500 text-white text-xs font-bold">💰 Buy</a>
-                <a href="https://x.com/organicrunner_" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 bg-black text-white rounded-xl">𝕏</a>
+                <a href={LINKS.ECOSYSTEM} className="px-3 py-2 rounded-full bg-gradient-to-r from-lime-100 to-green-100 text-xs font-bold text-green-700">🎮 Ecosystem</a>
+                <a href={LINKS.MERCH} target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-lime-100 text-xs font-bold text-emerald-700">🛍️ Merch</a>
+                <a href={LINKS.DEXSCREENER} target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-sky-100 to-cyan-100 text-xs font-bold text-cyan-700">📈 DexScreener</a>
+                <a href={LINKS.HEAVEN} target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-green-500 to-lime-500 text-white text-xs font-bold">💰 Buy</a>
+                <a href={LINKS.TWITTER} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 bg-black text-white rounded-xl">𝕏</a>
               </div>
               {/* Mobile burger */}
               <div className="sm:hidden">
@@ -49,6 +52,11 @@ export default function OrganicTokenLanding() {
           </div>
         </div>
       </nav>
+
+      {/* Rotating game promo banner */}
+      <div className="relative z-20 mt-3 mb-2">
+        <GameBanner />
+      </div>
 
       {/* Compact Play Now menu (not fixed) */}
       <div className="relative z-20 mt-2">
@@ -119,6 +127,18 @@ export default function OrganicTokenLanding() {
                     <PlaysCounter min={160} max={999} />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a
+                  href={LINKS.MOON}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative px-3 sm:px-4 py-2 bg-gradient-to-r from-amber-500 to-emerald-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden text-sm sm:text-base flex items-center gap-2"
+                >
+                  <span className="relative z-10">🎰 Cow Casino</span>
+                  <span className="relative z-10 text-[11px] bg-white/70 text-emerald-700 border border-white/60 rounded-full px-2 py-0.5">
+                    <PlaysCounter min={200} max={999} />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
             </div>
@@ -269,12 +289,7 @@ export default function OrganicTokenLanding() {
 
           {/* Contract Address */}
         <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200 shadow-sm">
-              <span className="text-xs text-gray-500">CA:</span>
-              <code className="text-xs font-mono text-gray-700">
-                DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777
-              </code>
-            </div>
+            <CopyCAButton />
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import { PlaysCounter } from "@/components/plays-counter"
 import { MobileMenu } from "@/components/mobile-menu"
+import { LINKS } from "@/config/links"
+import { CopyCAButton } from "@/components/copy-ca"
 
 export default function EcosystemPage() {
   return (
@@ -45,7 +47,7 @@ export default function EcosystemPage() {
                 <div className="w-px h-6 bg-gray-300 hidden sm:block" />
                 
                 <a
-                  href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
+                  href={LINKS.HEAVEN}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex shrink-0 items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 active:from-green-600 active:to-lime-500 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 active:scale-95 shadow-lg min-h-[40px]"
@@ -58,7 +60,7 @@ export default function EcosystemPage() {
                 <div className="w-px h-6 bg-gray-300 hidden sm:block" />
 
                 <a
-                  href="https://dexscreener.com/solana/9r87b2ur7jemtmshxjq9cwr4j4fnf2qfhzivhbay3zcb"
+                  href={LINKS.DEXSCREENER}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-sky-100 to-cyan-100 active:from-sky-200 active:to-cyan-200 rounded-full text-xs sm:text-sm font-bold text-cyan-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px]"
@@ -70,7 +72,7 @@ export default function EcosystemPage() {
                 {/* Right edge: X on desktop, burger on mobile */}
                 <div className="flex items-center">
                   <a
-                    href="https://x.com/organicrunner_"
+                    href={LINKS.TWITTER}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hidden sm:inline-flex shrink-0 items-center justify-center w-10 h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
@@ -119,20 +121,7 @@ export default function EcosystemPage() {
           </div>
           
           {/* Contract Address */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/80 backdrop-blur-xl rounded-xl border border-gray-200 shadow-lg">
-            <span className="text-xs text-gray-500 font-semibold">CA:</span>
-            <code className="text-xs font-mono text-gray-700">DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777</code>
-            <a
-              href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-600 hover:text-green-700 transition-colors"
-            >
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
+          <CopyCAButton />
         </div>
 
         {/* Mobile-Optimized Games Grid */}
@@ -315,6 +304,29 @@ export default function EcosystemPage() {
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Slide tiles, merge moos, reach 2048.</p>
               <div className="flex items-center gap-2 text-teal-700 font-semibold text-xs sm:text-sm">
                 <span>Play Now</span>
+                <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <a 
+            href={LINKS.MOON}
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block"
+          >
+            <div className="bg-gradient-to-br from-amber-200 to-emerald-200 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-amber-300 shadow-lg active:shadow-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 group-hover:from-amber-300 group-hover:to-emerald-300 h-full min-h-[180px] sm:min-h-[200px]">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:animate-bounce">🎰</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Organic Cow Casino</h3>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500 mb-2">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span><PlaysCounter min={200} max={999} /> plays</span>
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Send it to Valhalla. Pure organic fun.</p>
+              <div className="flex items-center gap-2 text-emerald-700 font-semibold text-xs sm:text-sm">
+                <span>Launch</span>
                 <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

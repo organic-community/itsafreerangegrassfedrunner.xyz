@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { LINKS } from "@/config/links"
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false)
@@ -36,11 +37,11 @@ export function MobileMenu() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-3 grid grid-cols-1 gap-2">
-              <a href="/ecosystem" className="px-4 py-3 rounded-xl bg-gradient-to-r from-lime-100 to-green-100 font-semibold text-green-700 text-sm">🎮 Ecosystem</a>
-              <a href="https://organicrunner-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-100 to-lime-100 font-semibold text-emerald-700 text-sm">🛍️ Merch Store</a>
-              <a href="https://dexscreener.com/solana/9r87b2ur7jemtmshxjq9cwr4j4fnf2qfhzivhbay3zcb" target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-gradient-to-r from-sky-100 to-cyan-100 font-semibold text-cyan-700 text-sm">📈 DexScreener</a>
-              <a href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777" target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-gradient-to-r from-green-500 to-lime-500 text-white font-bold text-sm">💰 Buy ORGANIC</a>
-              <a href="https://x.com/organicrunner_" target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-black text-white font-semibold text-sm">𝕏 Follow</a>
+              <a href={LINKS.ECOSYSTEM} className="px-4 py-3 rounded-xl bg-gradient-to-r from-lime-100 to-green-100 font-semibold text-green-700 text-sm">🎮 Ecosystem</a>
+              <a href={LINKS.MERCH} target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-100 to-lime-100 font-semibold text-emerald-700 text-sm">🛍️ Merch Store</a>
+              <a href={LINKS.DEXSCREENER} target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-gradient-to-r from-sky-100 to-cyan-100 font-semibold text-cyan-700 text-sm">📈 DexScreener</a>
+              <a href={LINKS.HEAVEN} target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-gradient-to-r from-green-500 to-lime-500 text-white font-bold text-sm">💰 Buy ORGANIC</a>
+              <a href={LINKS.TWITTER} target="_blank" rel="noopener noreferrer" className="px-4 py-3 rounded-xl bg-black text-white font-semibold text-sm">𝕏 Follow</a>
             </div>
           </div>
         </div>
