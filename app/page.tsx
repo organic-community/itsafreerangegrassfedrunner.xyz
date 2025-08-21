@@ -29,6 +29,57 @@ export default function OrganicTokenLanding() {
         </a>
       </div>
 
+      {/* Featured Games - loud and silly but non-invasive */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30">
+        <div className="px-4 py-3 rounded-2xl border-4 border-primary bg-white/90 backdrop-blur-md shadow-[0_0_40px_#84cc16]">
+          <div className="text-center text-sm font-extrabold mb-2 tracking-wide">
+            ✨ Featured Games ✨
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 max-w-[90vw]">
+            <a
+              href="https://v0-cow-game-development.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-full border-4 border-primary bg-lime-200 font-extrabold hover:rotate-1 hover:scale-105 transition active:scale-95"
+            >
+              🐮 3D Cow
+            </a>
+            <a
+              href="https://v0-cow-tapping-game.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-full border-4 border-orange-500 bg-orange-200 font-extrabold hover:-rotate-1 hover:scale-105 transition active:scale-95"
+            >
+              🥛 Tap Cow
+            </a>
+            <a
+              href="https://v0-cow-game-development.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-full border-4 border-lime-600 bg-green-200 font-extrabold hover:rotate-2 hover:scale-105 transition active:scale-95"
+            >
+              🌀 3D Cow /
+            </a>
+            <a
+              href="https://v0-cow-eating-game.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-full border-4 border-fuchsia-600 bg-pink-200 font-extrabold hover:-rotate-2 hover:scale-105 transition active:scale-95"
+            >
+              🌿 Eat Grass
+            </a>
+            <a
+              href="https://gizmo.party/p/8m-jY5ovTeqj2yJ2UwHDLw?_a=Rcbqaob0TmGweGfXp3Pn5w"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-full border-4 border-pink-600 bg-rose-200 font-extrabold hover:rotate-3 hover:scale-105 transition active:scale-95"
+            >
+              🎉 Gizmo Party
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
         <div className="text-center mb-8">
           <div className="inline-block bg-white/95 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-2xl border-4 border-primary">
