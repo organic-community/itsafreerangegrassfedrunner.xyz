@@ -1,4 +1,5 @@
 import { PlaysCounter } from "@/components/plays-counter"
+import { MobileMenu } from "@/components/mobile-menu"
 
 export default function EcosystemPage() {
   return (
@@ -31,11 +32,11 @@ export default function EcosystemPage() {
                 </span>
               </div>
 
-              {/* Mobile Navigation Links */}
-              <div className="flex items-center gap-2 sm:gap-4">
+              {/* Desktop links; mobile shows burger */}
+              <div className="hidden sm:flex items-center gap-2 sm:gap-4">
                 <a
                   href="/"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-lime-100 to-green-100 active:from-lime-200 active:to-green-200 rounded-full text-xs sm:text-sm font-bold text-green-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
+                  className="group relative inline-flex shrink-0 items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-lime-100 to-green-100 active:from-lime-200 active:to-green-200 rounded-full text-xs sm:text-sm font-bold text-green-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[40px] min-w-[44px] justify-center sm:min-w-auto"
                 >
                   <span className="text-base sm:text-sm">🏠</span>
                   <span className="hidden sm:inline">Home</span>
@@ -47,7 +48,7 @@ export default function EcosystemPage() {
                   href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 active:from-green-600 active:to-lime-500 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 active:scale-95 shadow-lg min-h-[44px]"
+                  className="group relative inline-flex shrink-0 items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 active:from-green-600 active:to-lime-500 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 active:scale-95 shadow-lg min-h-[40px]"
                 >
                   <span className="text-base sm:text-sm">💰</span>
                   <span className="hidden sm:inline">Buy ORGANIC</span>
@@ -66,20 +67,22 @@ export default function EcosystemPage() {
                   <span className="hidden sm:inline">DexScreener</span>
                 </a>
 
-                <a
-                  href="https://x.com/organicrunner_"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center w-11 h-11 sm:w-10 sm:h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
+                {/* Right edge: X on desktop, burger on mobile */}
+                <div className="flex items-center">
+                  <a
+                    href="https://x.com/organicrunner_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:inline-flex shrink-0 items-center justify-center w-10 h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
                   >
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </a>
+                  <div className="sm:hidden">
+                    <MobileMenu />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

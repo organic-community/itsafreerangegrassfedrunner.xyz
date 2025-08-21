@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { PlaysCounter } from "@/components/plays-counter";
 import PluginComponent from "@/components/jupiter-widget";
+import { MobileMenu } from "@/components/mobile-menu";
 
 export default function OrganicTokenLanding() {
   // client-side counters are handled by PlaysCounter to keep values under 1000
@@ -29,99 +30,34 @@ export default function OrganicTokenLanding() {
             <div className="flex items-center justify-between">
               {/* Logo & Brand */}
               <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg active:scale-95 transition-transform cursor-pointer">
-                  🐄
-                </div>
-                <span className="text-base sm:text-lg font-black bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent">
-                  ORGANIC
-                </span>
-      </div>
-
-              {/* Mobile Navigation Links */}
-              <div className="flex items-center gap-2 sm:gap-4">
-                <a
-                  href="/ecosystem"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-lime-100 to-green-100 active:from-lime-200 active:to-green-200 rounded-full text-xs sm:text-sm font-bold text-green-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
-                >
-                  <span className="text-base sm:text-sm">🎮</span>
-                  <span className="hidden sm:inline">Ecosystem</span>
-                </a>
-
-                <div className="w-px h-6 bg-gray-300 hidden sm:block" />
-
-                <a
-                  href="/staking"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 active:from-purple-200 active:to-pink-200 rounded-full text-xs sm:text-sm font-bold text-purple-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
-                >
-                  <span className="text-base sm:text-sm">🌱</span>
-                  <span className="hidden sm:inline">Staking</span>
-                </a>
-
-                <div className="w-px h-6 bg-gray-300 hidden sm:block" />
-
-                <a
-                  href="https://organicrunner-shop.fourthwall.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-emerald-100 to-lime-100 active:from-emerald-200 active:to-lime-200 rounded-full text-xs sm:text-sm font-bold text-emerald-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
-                >
-                  <span className="text-base sm:text-sm">🛍️</span>
-                  <span className="hidden sm:inline">Merch Store</span>
-                </a>
-
-                <div className="w-px h-6 bg-gray-300 hidden sm:block" />
-
-                <a
-                  href="https://dexscreener.com/solana/9r87b2ur7jemtmshxjq9cwr4j4fnf2qfhzivhbay3zcb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-sky-100 to-cyan-100 active:from-sky-200 active:to-cyan-200 rounded-full text-xs sm:text-sm font-bold text-cyan-700 transition-all duration-300 active:scale-95 shadow-sm min-h-[44px] min-w-[44px] justify-center sm:min-w-auto"
-                >
-                  <span className="text-base sm:text-sm">📈</span>
-                  <span className="hidden sm:inline">DexScreener</span>
-                </a>
-
-                <a
-                  href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 active:from-green-600 active:to-lime-500 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 active:scale-95 shadow-lg min-h-[44px]"
-                >
-                  <span className="text-base sm:text-sm">💰</span>
-                  <span className="hidden sm:inline">Buy ORGANIC</span>
-                  <span className="sm:hidden text-xs">Buy</span>
-                </a>
-
-        <a
-          href="https://x.com/organicrunner_"
-          target="_blank"
-          rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center w-11 h-11 sm:w-10 sm:h-10 bg-black active:bg-gray-800 text-white rounded-xl transition-all duration-300 active:scale-95 shadow-lg"
-        >
-          <svg
-                    className="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-      </div>
+                <div className="w-8 h-8 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg active:scale-95 transition-transform cursor-pointer">🐄</div>
+                <span className="text-base sm:text-lg font-black bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent">ORGANIC</span>
+              </div>
+              {/* Desktop links */}
+              <div className="hidden sm:flex items-center gap-3">
+                <a href="/ecosystem" className="px-3 py-2 rounded-full bg-gradient-to-r from-lime-100 to-green-100 text-xs font-bold text-green-700">🎮 Ecosystem</a>
+                <a href="https://organicrunner-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-lime-100 text-xs font-bold text-emerald-700">🛍️ Merch</a>
+                <a href="https://dexscreener.com/solana/9r87b2ur7jemtmshxjq9cwr4j4fnf2qfhzivhbay3zcb" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-sky-100 to-cyan-100 text-xs font-bold text-cyan-700">📈 DexScreener</a>
+                <a href="https://heaven.xyz/token/DeySaoLoSppcriZAtjUzWjFrUgK3jZhbsK4ifipw9777" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-full bg-gradient-to-r from-green-500 to-lime-500 text-white text-xs font-bold">💰 Buy</a>
+                <a href="https://x.com/organicrunner_" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 bg-black text-white rounded-xl">𝕏</a>
+              </div>
+              {/* Mobile burger */}
+              <div className="sm:hidden">
+                <MobileMenu />
+              </div>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Modern Featured Games Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-30 p-4 bg-gradient-to-t from-black/10 to-transparent">
+      {/* Compact Play Now menu (not fixed) */}
+      <div className="relative z-20 mt-2">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 p-4">
+          <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-4">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-2xl animate-bounce">🎮</span>
-                <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">
-                  Play Now
-                </span>
+                <span className="text-2xl">🎮</span>
+                <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">Play Now</span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-2">
                 <a
