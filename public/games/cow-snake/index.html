@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cow Snake Game 🐄🐍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>🐄 Cow Snake Game 🐄</h1>
+            <div class="score-container">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="high-score">High Score: <span id="high-score">0</span></div>
+            </div>
+        </header>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            <div class="game-over" id="gameOver" style="display: none;">
+                <h2>Game Over! 🐄💔</h2>
+                <p>Your cow ate <span id="finalScore">0</span> treats!</p>
+                <button id="restartBtn">Play Again 🐄</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <p>🎮 Use arrow keys to move your cow!</p>
+            <p>🌾 Eat hay and grass to grow bigger!</p>
+            <div class="mobile-controls" id="mobileControls">
+                <button class="control-btn" data-direction="up">↑</button>
+                <div class="control-row">
+                    <button class="control-btn" data-direction="left">←</button>
+                    <button class="control-btn" data-direction="down">↓</button>
+                    <button class="control-btn" data-direction="right">→</button>
+                </div>
+            </div>
+        </div>
+        
+        <button id="startBtn" class="start-btn">Start Game! 🐄</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
